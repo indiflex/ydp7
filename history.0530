@@ -1,0 +1,62 @@
+593  git remote add origin https://github.com/indiflex/ydp7.git
+  594  ll
+  595  cd linux/
+  596  ll
+  597  docker ps
+  598  cd ..
+  599  ll
+  600  ll
+  601  git remote -v
+  602  git remote -vv
+  603  git branch -a
+  604  Ps3
+  605  git pull origin master
+  606  git branch -a
+  607  git branch -M master
+  608  git branch -a
+  609  ll
+  610  cat t
+  611  ll
+  612  touch .gitignore
+  613  ll .git
+  614  git status
+  615  git add -A
+  616  git status
+  617  git commit -m "first commit"
+  618  git status
+  619  git push -u origin master
+  620  git checkout -b develop
+  621  ll
+  622  git status
+  623  git add test.txt
+  624  git status
+  625  git restore --staged
+  626  git restore --staged test.txt
+  627  git status
+  628  ll
+  629  git resotre --staged t
+  630  git restore --staged t
+  631  git status
+  632  git restore  t
+  633  git status
+  634  git restore test.txt
+  635  git ls-files
+  636  git ls-files -u
+  637  git ls-files --stage
+  638  git lg
+  639  git log
+  640  git lg
+  641  git log -5 --one-line
+  642  git log -5 --oneline
+  643  gi tlg
+  644  git lg
+  645  git remote show origin
+  646  git diff
+  647  git diff HEAD
+  648  git log
+  649  git diff HEAD~1
+  650  git ls-files -u
+  651  git ls-files -s
+  652  ll
+  653  git rm t
+  654  ll
