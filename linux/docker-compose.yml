@@ -8,7 +8,7 @@ services:
     stdin_open: true
     command: /bin/bash
     volumes:
-      - ./data:/root/data
+      - ./data:/root
 
   ubuntu:
     image: ubuntu:latest
@@ -17,7 +17,7 @@ services:
     stdin_open: true
     command: /bin/bash
     volumes:
-      - ./data2:/root/data
+      - ./data2:/root
 
   rocky:
     image: rockylinux:9
@@ -26,4 +26,4 @@ services:
     stdin_open: true
     command: /bin/bash
     volumes:
-      - ./data3:/root/data
+      - ./data3:/root
