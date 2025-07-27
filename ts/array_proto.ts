@@ -8,7 +8,7 @@ declare global {
   interface Array<T> {
     firstObject: T;
     lastObject: T;
-    mapBy<P extends keyof T>(prop: P): T[];
+    mapBy<P extends keyof T>(prop: P): T[P][];
     filterBy<P extends keyof T>(
       prop: P,
       value: T[P],
@@ -27,7 +27,7 @@ declare global {
   }
 }
 
-Array.prototype.mapBy = function (prop: string) {
+Array.prototype.mapBy = function (prop) {
   return this.map(a => a[prop]);
 };
 console.log(users.mapBy('id')); // [1, 3, 2];
@@ -53,9 +53,23 @@ Array.prototype.filterBy = function <T, P extends keyof T>(
 console.log(users.filterBy('id', 2)); // [kim]);
 console.log(users.filterBy('name', 'i', true)); // [kim]
 
-Array.prototype.rejectBy = function (prop, value, isIncludes = false) {
+type HasIncludes<T> = {
+  includes(searchElement: T, fromIndex?: number): boolean;
+};
+
+const hasIncludes = <T>(p: any, v: T): p is HasIncludes<T> =>
+  Array.isArray(p) || (typeof p === 'string' && typeof v === 'string');
+
+Array.prototype.rejectBy = function <T, P extends keyof T>(
+  this: T[],
+  prop: P,
+  value: T[P],
+  isIncludes = false
+) {
   return this.filter(
-    isIncludes ? a => !a[prop]?.includes(value) : a => a[prop] !== value
+    isIncludes
+      ? a => hasIncludes(a[prop], value) && !a[prop].includes(value)
+      : a => a[prop] !== value
   );
 };
 console.log(users.rejectBy('id', 2)); // [hong, lee]
