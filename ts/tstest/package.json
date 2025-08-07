@@ -16,5 +16,8 @@
     "jest": "^30.0.5",
     "ts-jest": "^29.4.0",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "exctx": "^0.0.1"
   }
 }

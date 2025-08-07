@@ -5,6 +5,7 @@ node_modules
 
 linux/data*
 
+dist
 tmp
 ttt
 ttt.*
